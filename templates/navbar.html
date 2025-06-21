@@ -2,7 +2,7 @@
     <div class="nav-container">
         <a href="{{ url_for('index') }}" class="logo">
             <img src="{{ url_for('static', filename='logo.png') }}" alt="Education for All">
-            <span>EduHope</span>
+            <span>Aathreya</span>
         </a>
         
         <ul class="nav-menu" id="nav-menu">
@@ -33,15 +33,28 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
+// Navbar scroll behavior for appearing after hero
+document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+    const heroSection = document.getElementById('hero-section');
+
+    if (!navbar || !heroSection) return;
+
+    let heroHeight = heroSection.offsetHeight;
+
+    window.addEventListener('resize', () => {
+        heroHeight = heroSection.offsetHeight;
+    });
+
+    function toggleNavbarVisibility() {
+        if (window.scrollY > heroHeight - 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
+
+    toggleNavbarVisibility();
+    window.addEventListener('scroll', toggleNavbarVisibility);
 });
 </script>

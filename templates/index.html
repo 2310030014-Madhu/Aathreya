@@ -11,7 +11,7 @@
     {% include 'navbar.html' %}
     
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero " id="hero-section" >
         <div class="hero-content">
             <h1>Empowering Dreams Through Education</h1>
             <p class="hero-subtitle">
@@ -23,38 +23,39 @@
     </section>
 
     <!-- Mission Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Our Mission</p>
-                <h2>Education is the Key to Breaking Poverty</h2>
-                <p>We believe every child deserves access to quality education, regardless of their economic background. Through your generous support, we're building a brighter future, one student at a time.</p>
-            </div>
-            
-            <div class="grid grid-3">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img1.jpg') }}" alt="Students learning" class="card-image">
-                    <h3 class="card-title">Quality Learning</h3>
-                    <p class="card-text">Providing comprehensive educational resources and qualified teachers to ensure every child receives the quality education they deserve.</p>
-                </div>
-                
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img2.jpg') }}" alt="School supplies" class="card-image">
-                    <h3 class="card-title">Essential Resources</h3>
-                    <p class="card-text">Supplying books, stationery, uniforms, and learning materials to remove financial barriers to education.</p>
-                </div>
-                
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Community support" class="card-image">
-                    <h3 class="card-title">Community Impact</h3>
-                    <p class="card-text">Building stronger communities by educating children who will become tomorrow's leaders and change-makers.</p>
-                </div>
-            </div>
+   <section class="section scroll-animate">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-subtitle">Our Mission</p>
+      <h2>Education is the Key to Breaking Poverty</h2>
+      <p>We believe every child deserves access to quality education...</p>
+    </div>
+
+    <!-- Wrapper with reserved height -->
+    <div class="carousel-wrapper">
+      <div class="card-carousel">
+        <div class="card">
+          <img src="{{ url_for('static', filename='img1.jpg') }}" class="card-image">
+          <h3 class="card-title">Quality Learning</h3>
+          <p class="card-text">Providing educational resources...</p>
         </div>
-    </section>
+        <div class="card">
+          <img src="{{ url_for('static', filename='img5.png') }}" class="card-image">
+          <h3 class="card-title">Essential Resources</h3>
+          <p class="card-text">Supplying books, uniforms...</p>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='img3.jpg') }}" class="card-image">
+          <h3 class="card-title">Community Impact</h3>
+          <p class="card-text">Educating future change-makers...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Impact Stats -->
-    <section class="stats">
+    <section class="stats scroll-animate">
         <div class="container">
             <h2>Our Impact So Far</h2>
             <p>See how your contributions are making a real difference in children's lives</p>
@@ -81,7 +82,7 @@
     </section>
 
     <!-- How We Help -->
-    <section class="section">
+    <section class="section scroll-animate">
         <div class="container">
             <div class="section-header">
                 <p class="section-subtitle">How We Help</p>
@@ -120,7 +121,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="section" style="background: var(--secondary-color);">
+    <section class="section scroll-animate" style="background: var(--secondary-color);">
         <div class="container">
             <div class="section-header">
                 <h2>Ready to Change a Life?</h2>
@@ -131,5 +132,49 @@
     </section>
 
     {% include 'footer.html' %}
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll('.card-carousel .card');
+    let current = 0;
+
+    function showCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.remove('active');
+            card.style.zIndex = i === index ? 2 : 1;
+        });
+        cards[index].classList.add('active');
+    }
+
+    showCard(current);
+
+    setInterval(() => {
+        current = (current + 1) % cards.length;
+        showCard(current);
+    }, 3000); // change every 3 seconds
+});
+</script>
+
+
+
+     
 </body>
 </html>

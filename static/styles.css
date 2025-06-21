@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,16 +5,16 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #f8fafc;
-    --accent-color: #f59e0b;
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --text-light: #94a3b8;
+    --primary-color: #3F51B5; /* Indigo - Trust, Wisdom, Stability */
+    --primary-dark: #303F9F; /* Darker Indigo */
+    --secondary-color: #FDFEFE; /* Very Light Background - Clean, Open */
+    --accent-color: #FFC107; /* Amber - Optimism, Hope, Warmth */
+    --text-primary: #263238; /* Dark Blue Grey - Strong, Readable */
+    --text-secondary: #607D8B; /* Blue Grey - Softer, Readable */
+    --text-light: #B0BEC5; /* Light Grey - Subtle */
     --white: #ffffff;
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-primary: linear-gradient(135deg, #3F51B5 0%, #673AB7 100%); /* Indigo to Deep Purple - Rich, Inspiring */
+    --gradient-secondary: linear-gradient(135deg, #BBDEFB 0%, #FFCC80 100%); /* Light Blue to Light Orange - Soft, Hopeful */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -28,6 +27,8 @@ body {
     color: var(--text-primary);
     background-color: var(--white);
     overflow-x: hidden;
+    padding-top: 0; /* Ensure no initial padding */
+    transition: padding-top 0.3s ease-out; /* Smooth transition for padding */
 }
 
 /* Typography */
@@ -67,12 +68,21 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 1000;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
 }
+
+.navbar.scrolled {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+    box-shadow: var(--shadow-md);
+}
+
 
 .nav-container {
     max-width: 1200px;
@@ -148,38 +158,58 @@ p {
 
 /* Hero Section */
 .hero {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-    position: relative;
+    color: white;
+    background-color: #1A237E; /* Deep Indigo as fallback */
     overflow: hidden;
+    z-index: 0;
 }
 
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-    opacity: 0.5;
+    inset: 0;
+    background-image: url("/static/img2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0.5; /* Adjust image visibility */
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(63, 81, 181, 0.7), rgba(103, 58, 183, 0.7));
+    z-index: 2;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 3;
     text-align: center;
     max-width: 800px;
     padding: 2rem;
-    position: relative;
-    z-index: 2;
     animation: fadeInUp 1s ease-out;
 }
 
-.hero-subtitle {
+
+/* Override text color for hero content specifically */
+.hero-content h1 {
+    -webkit-text-fill-color: white; /* Ensure H1 gradient blends with white for legibility */
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.hero-content p, .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--text-secondary);
+    color: var(--white); /* Text should be white on dark background */
     margin-bottom: 2rem;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.3s forwards;
@@ -449,4 +479,52 @@ p {
     .grid-4 {
         grid-template-columns: 1fr;
     }
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+    perspective: 1000px;
+}
+
+.card-carousel .card {
+    width: 300px;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.8s ease;
+    transform: scale(0.9);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.card-carousel .card.active {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 3;
+}
+
+.card-carousel .card.prev,
+.card-carousel .card.next {
+    transform: scale(0.95);
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.card-carousel .card.hidden {
+    display: none;
 }
