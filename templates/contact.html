@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EduHope</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-content">
+            <h1>Get in Touch</h1>
+            <p class="hero-subtitle">
+                Ready to make a difference? We'd love to hear from you and discuss how you can help transform lives through education.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="gap: 4rem; align-items: start;">
+                <div>
+                    <h2>Let's Start a Conversation</h2>
+                    <p>Whether you're interested in making a donation, volunteering your time, or learning more about our programs, we're here to connect with you. Every conversation is the beginning of positive change.</p>
+                    
+                    <p>Our team is passionate about education and dedicated to transparency. When you reach out, you'll speak with people who are directly involved in our programs and can provide detailed information about how your support creates real impact.</p>
+                    
+                    <p>We believe in building lasting relationships with our supporters, so don't hesitate to ask questions, share your ideas, or simply tell us what motivates you to help. Together, we can create more opportunities for children to access quality education.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <div>
+                                <div class="contact-text">Email Us</div>
+                                <div style="color: var(--primary-color); font-weight: 600;">info@eduhope.org</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <div>
+                                <div class="contact-text">Call Us</div>
+                                <div style="color: var(--primary-color); font-weight: 600;">+1 (555) 123-4567</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="contact-text">Visit Our Office</div>
+                                <div style="color: var(--primary-color); font-weight: 600;">123 Education Street<br>Hope City, HC 12345</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="contact-text">Office Hours</div>
+                                <div style="color: var(--primary-color); font-weight: 600;">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Contact us" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg); margin-bottom: 2rem;">
+                    
+                    <div class="card">
+                        <h3>How to Support</h3>
+                        <p>There are many ways to get involved with our mission:</p>
+                        
+                        <div style="margin: 2rem 0;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong style="color: var(--primary-color); display: block; margin-bottom: 0.5rem;">💰 Financial Donations</strong>
+                                <p style="margin: 0; font-size: 1rem;">Every contribution, large or small, directly impacts a child's educational journey. Contact us to discuss donation options and see exactly how your money will be used.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong style="color: var(--primary-color); display: block; margin-bottom: 0.5rem;">🎒 Material Donations</strong>
+                                <p style="margin: 0; font-size: 1rem;">We accept donations of school supplies, books, uniforms, and educational materials. Reach out to learn about our current most-needed items.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong style="color: var(--primary-color); display: block; margin-bottom: 0.5rem;">🤝 Volunteer Opportunities</strong>
+                                <p style="margin: 0; font-size: 1rem;">Share your skills and time by tutoring, mentoring, or helping with administrative tasks. We have both on-site and remote volunteer options.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong style="color: var(--primary-color); display: block; margin-bottom: 0.5rem;">📢 Spread Awareness</strong>
+                                <p style="margin: 0; font-size: 1rem;">Help us reach more people by sharing our mission with your network, organizing fundraising events, or becoming a community ambassador.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--secondary-color);">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Frequently Asked Questions</p>
+                <h2>Common Questions About Supporting Our Mission</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>How are donations used?</h3>
+                    <p>We maintain complete transparency in our operations. 85% of donations go directly to educational programs, 10% to administrative costs, and 5% to fundraising efforts. We provide detailed reports on how every dollar is spent.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Can I visit the programs?</h3>
+                    <p>We welcome supporters to see our programs in action. Contact us to arrange a visit to one of our partner schools or community centers. Seeing the impact firsthand is incredibly rewarding.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Do you accept international donations?</h3>
+                    <p>Yes, we accept donations from supporters worldwide. We work with international banking partners to make the donation process simple and secure for contributors from any country.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>How can businesses get involved?</h3>
+                    <p>We offer various corporate partnership opportunities, including sponsorship programs, employee volunteer initiatives, and matching gift programs. Contact us to discuss custom partnership options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Make an Impact?</h2>
+                <p>Don't wait to start making a difference. Every day that passes is another day a child could be in school instead of missing out on education. Reach out today and let's discuss how your support can transform lives.</p>
+                <p style="font-size: 1.125rem; color: var(--primary-color); font-weight: 600;">
+                    Together, we can ensure that poverty never stands in the way of a child's dreams.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>

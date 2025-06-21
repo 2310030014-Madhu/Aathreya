@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduHope - Education for All</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Empowering Dreams Through Education</h1>
+            <p class="hero-subtitle">
+                Together, we can break the cycle of poverty by providing quality education 
+                to children who need it most. Every donation transforms a life.
+            </p>
+            <a href="{{ url_for('contact') }}" class="cta-button">Start Making a Difference</a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Our Mission</p>
+                <h2>Education is the Key to Breaking Poverty</h2>
+                <p>We believe every child deserves access to quality education, regardless of their economic background. Through your generous support, we're building a brighter future, one student at a time.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img1.jpg') }}" alt="Students learning" class="card-image">
+                    <h3 class="card-title">Quality Learning</h3>
+                    <p class="card-text">Providing comprehensive educational resources and qualified teachers to ensure every child receives the quality education they deserve.</p>
+                </div>
+                
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img2.jpg') }}" alt="School supplies" class="card-image">
+                    <h3 class="card-title">Essential Resources</h3>
+                    <p class="card-text">Supplying books, stationery, uniforms, and learning materials to remove financial barriers to education.</p>
+                </div>
+                
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Community support" class="card-image">
+                    <h3 class="card-title">Community Impact</h3>
+                    <p class="card-text">Building stronger communities by educating children who will become tomorrow's leaders and change-makers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="stats">
+        <div class="container">
+            <h2>Our Impact So Far</h2>
+            <p>See how your contributions are making a real difference in children's lives</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Children Educated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Schools Supported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Graduation Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Communities Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">How We Help</p>
+                <h2>Transforming Lives Through Education</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div>
+                    <img src="{{ url_for('static', filename='img4.jpg') }}" alt="Students in classroom" style="width: 100%; border-radius: 20px; margin-bottom: 2rem;">
+                </div>
+                <div>
+                    <h3>Breaking Barriers to Education</h3>
+                    <p>Many children from impoverished backgrounds face multiple obstacles to education: lack of school fees, uniforms, textbooks, and basic supplies. Some must work to support their families instead of attending school.</p>
+                    
+                    <p>Our comprehensive approach addresses these challenges by providing:</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: var(--primary-color);">📚 Educational Materials:</strong> Books, notebooks, and learning supplies
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: var(--primary-color);">👕 School Uniforms:</strong> Proper attire to ensure dignity and belonging
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: var(--primary-color);">🍎 Nutritional Support:</strong> Meals to keep children healthy and focused
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong style="color: var(--primary-color);">🏫 Infrastructure:</strong> Safe, conducive learning environments
+                        </div>
+                    </div>
+                    
+                    <p>Your support doesn't just educate a child—it transforms entire families and communities, creating a ripple effect of positive change that lasts for generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: var(--secondary-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Change a Life?</h2>
+                <p>Every contribution, no matter the size, makes a meaningful difference in a child's educational journey. Together, we can build a world where every child has the opportunity to learn, grow, and succeed.</p>
+                <a href="{{ url_for('contact') }}" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>

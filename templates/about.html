@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EduHope</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-content">
+            <h1>About EduHope</h1>
+            <p class="hero-subtitle">
+                Dedicated to creating educational opportunities for underprivileged children worldwide
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+                <div>
+                    <p class="section-subtitle">Our Story</p>
+                    <h2>Born from a Vision of Equal Opportunity</h2>
+                    <p>EduHope was founded with a simple yet powerful belief: every child, regardless of their economic circumstances, deserves access to quality education. What started as a small community initiative has grown into a movement that has touched thousands of lives.</p>
+                    
+                    <p>We understand that education is not just about reading and writing—it's about hope, dignity, and the power to transform not just individual lives, but entire communities. When we educate a child, we're investing in a future where poverty doesn't determine potential.</p>
+                    
+                    <p>Our approach is holistic, addressing not just the academic needs of children, but also the social, emotional, and physical barriers that prevent them from accessing education.</p>
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='img1.jpg') }}" alt="Our mission" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="section" style="background: var(--secondary-color);">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Our Values</p>
+                <h2>What Drives Us Forward</h2>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 class="card-title">🎯 Impact</h3>
+                    <p class="card-text">We measure our success not in numbers alone, but in the transformed lives of children who now have access to education and the opportunities it brings.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🤝 Transparency</h3>
+                    <p class="card-text">Every donation is used with purpose and accountability. We believe our supporters deserve to know exactly how their contributions are making a difference.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🌍 Sustainability</h3>
+                    <p class="card-text">We don't just provide temporary relief. We build sustainable educational systems that continue to serve communities long after our initial intervention.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">💡 Innovation</h3>
+                    <p class="card-text">We constantly seek new and better ways to deliver education, leveraging technology and creative approaches to overcome traditional barriers.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">❤️ Compassion</h3>
+                    <p class="card-text">At the heart of everything we do is a deep empathy for children who face circumstances beyond their control, and a commitment to help them thrive.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">⚡ Empowerment</h3>
+                    <p class="card-text">We don't just give children an education—we give them the tools, confidence, and support to become leaders and changemakers in their own communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Our Approach</p>
+                <h2>How We Create Lasting Change</h2>
+            </div>
+            
+            <div class="grid grid-2" style="gap: 4rem;">
+                <div>
+                    <img src="{{ url_for('static', filename='img2.jpg') }}" alt="Our approach" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg);">
+                </div>
+                <div>
+                    <h3>Community-Centered Solutions</h3>
+                    <p>We work directly with local communities to understand their unique challenges and needs. Our programs are designed in partnership with community leaders, parents, and educators to ensure they are culturally appropriate and sustainable.</p>
+                    
+                    <h3>Comprehensive Support</h3>
+                    <p>Education doesn't happen in a vacuum. We provide not just academic support, but also address issues like nutrition, health, and family economic stability that can impact a child's ability to learn.</p>
+                    
+                    <h3>Long-term Commitment</h3>
+                    <p>We don't believe in quick fixes. Our programs are designed to create lasting change by building local capacity and establishing systems that can continue to serve children long after our direct involvement ends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Areas -->
+    <section class="section" style="background: var(--secondary-color);">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Impact Areas</p>
+                <h2>Where We Make a Difference</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Rural education" class="card-image">
+                    <h3 class="card-title">Rural Communities</h3>
+                    <p class="card-text">In remote villages where schools are scarce and resources are limited, we establish learning centers and provide educational materials to ensure no child is left behind due to geographic isolation.</p>
+                </div>
+                
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img4.jpg') }}" alt="Urban support" class="card-image">
+                    <h3 class="card-title">Urban Slums</h3>
+                    <p class="card-text">In overcrowded urban areas where poverty is concentrated, we work with families to remove economic barriers to education and provide safe learning environments for children.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Whether in remote villages or bustling city slums, we meet children where they are and provide the support they need to access quality education. Every community is unique, and our solutions are tailored to address their specific challenges and leverage their existing strengths.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Mission -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join Our Mission</h2>
+                <p>Education is a collective responsibility. When we work together, we can create a world where every child has the opportunity to learn, grow, and reach their full potential.</p>
+                <p>Your support—whether financial, volunteer time, or simply spreading awareness—helps us continue this vital work. Together, we're not just changing individual lives; we're building stronger, more equitable communities for future generations.</p>
+                <a href="{{ url_for('contact') }}" class="cta-button">Get Involved Today</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>
